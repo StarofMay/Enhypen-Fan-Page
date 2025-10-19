@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhypen Fan Wiki</title>
+    <link rel="icon" type="image/png" href="icon_en.png">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1;
+        background-image: url('bg_vamp.jpg');
+        margin-bottom: 30px;
+        }
+
+    .container {
+        width: 97%;
+        color: rgb(255, 255, 255) !important; /*ensures nga mao ni color sa text throughout*/
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        position: relative;
+        min-height: 100px;
+        font-family:monospace;
+        font-size: 40px;
+        }
+
+    /* Header styles */
+    .header-container {
+        width: 97%;
+        color: rgb(255, 255, 255);
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg_vamp.png');/*semi-transparent para cool*/
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        position: relative;
+        text-align: center; 
+        font-family: 'Arial', sans-serif;
+        font-size: 35px;
+        border-radius: 8px;
+        border-style: none; /*this looks best*/
+        margin-bottom: 20px;
+        }
+
+    /* Navigation styles */
+        .nav-container {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+            /* Hamburger menu styles */
+            .menu-toggle {
+                display: none;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 28px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+
+            @media (max-width: 700px) {
+                .nav-wrapper {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                }
+                .nav-wrapper.active {
+                    display: flex;
+                }
+                .menu-toggle {
+                    display: block;
+                }
+                ul.nav {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                ul.nav li {
+                    margin: 10px 0;
+                }
+            }
+     /*navigation style*/
+    ul.nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+    ul.nav li {
+        margin: 0 15px;
+    }
+    ul.nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    ul.nav li a:hover {
+         background-color:#830000;
+        transform: translateY(-2px);
+    }
+
+    /*the vamp kidz*/
+    .rising-images {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 120px;
+        gap: 10px;
+        margin: 30px 0;
+        padding: 0;
+        list-style: none;
+    }
+    .rising-images li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .rising-images img {
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        object-fit: cover;
+        border: none !important;
+        outline: none !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.6s ease-in-out;
+    }
+    .rising-images .member-name {
+        position: absolute;
+        bottom: -40px; /* Position below image */
+        background: #830000;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: 0;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    /* Tooltip arrow for the mem names*/
+    .rising-images .member-name::before {
+        content: '';
+        position: absolute;
+        top: -6px; /* Positions the arrow above the tooltip */
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #830000;
+    }
+    .rising-images li:hover .member-name {
+        opacity: 1;
+        bottom: -35px; /* Slight upward movement on hover */
+    }
+    /* Individual rising animations for vamp kidz*/
+    .rising-images li:nth-child(1) img {
+        animation: riseUp 4s ease-in-out infinite;
+    }
+    .rising-images li:nth-child(2) img {
+        animation: riseUp 4s ease-in-out infinite 1s;
+    }
+    .rising-images li:nth-child(3) img {
+        animation: riseUp 4s ease-in-out infinite 2s;
+    }
+    .rising-images li:nth-child(4) img {
+        animation: riseUp 4s ease-in-out infinite 3s;
+    }
+    .rising-images li:nth-child(5) img {
+        animation: riseUp 4s ease-in-out infinite 4s;
+    }
+    .rising-images li:nth-child(6) img {
+        animation: riseUp 4s ease-in-out infinite 5s;
+    }
+    .rising-images li:nth-child(7) img {
+        animation: riseUp 4s ease-in-out infinite 6s;
+    }
+        @keyframes riseUp {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        25% {
+            transform: translateY(-20px);
+        }
+        50% {
+            transform: translateY(0);
+        }
+        75% {
+            transform: translateY(-10px);
+        }
+        }
+
+    p { /*for all paragraphs*/
+        font-size: 20px;
+        text-align: justify; 
+    }
+    img { /*for all pics*/
+        display: block;
+        margin: auto;
+        outline: #ffffff; 
+        outline-style: solid; 
+        outline-width: 6px; 
+    }
+
+    /*table for logo*/
+    table, td, th {  
+        border: 4px solid #ddd;
+        text-align: center;
+        padding: 20px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        position: relative;
+        margin: 0 auto; /*to center the table*/
+    }
+    th {
+        padding: 10px;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg_vamp.png');
+    }
+    table img {
+        border: none !important; /*para wla sila border and such*/
+        outline: none !important;
+        width: 200px;
+    }
+
+    /* Slide styles para sa members*/
+    .slides-container {
+        position: relative;
+        width: 100%;
+        height: 900px;
+        overflow: hidden;
+    }
+    .slide {
+        position: absolute;
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .slide.active {
+        display: flex;
+    }
+    .slide-content {
+        border-radius: 15px;
+        padding: 30px;
+        width: 90%;
+        max-width: 1200px;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ID Card Layout para sa members info*/
+    .id-card {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+        align-items: center;
+    }
+    .id-image {
+        flex: 0 0 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 3px solid #830000;
+    }
+    .id-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .id-info {
+        flex: 1;
+    }
+    .id-info h2 {
+        color: #ff4747;
+        margin-bottom: 15px;
+        font-size: 28px;
+        border-bottom: 2px solid #830000;
+        padding-bottom: 10px;
+    }
+    .id-info p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    /* Gallery Section sa members*/
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+    .gallery img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Navigation Buttons */
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(131, 0, 0, 0.8);
+        color: white;
+        border: none;
+        padding: 20px 15px;
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    .nav-btn:hover {
+        background: #ff4747;
+        transform: translateY(-50%) scale(1.1);
+    }
+    .prev-btn {
+        left: 20px;
+    }
+    .next-btn {
+        right: 20px;
+    }
+
+    /*dot dot at the bottom*/
+    .slide-indicators {
+        position: absolute;
+        bottom: 100px; /*moves it closer to the slide*/
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+    }
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .indicator.active {
+        background: #ff4747;
+        transform: scale(1.2);
+    }
+
+/*for the Albums section*/
+    .main-container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        /* Left side - CD Player */
+        .cd-player {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .album-art {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            margin-top: 100px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .album-info {
+            text-align: center;
+            margin-bottom: 25px;
+            width: 100%;
+            color:#ffffff;
+        }
+        .album-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ff4747;
+        }
+        .album-year {
+            font-size: 16px;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        /* Right side - Track List */
+        .track-list {
+            flex: 1;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            max-height: 2000px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            color: #ff4747;
+        }
+        .track {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: background 0.3s;
+            cursor: pointer;
+            color: white;
+        }
+        .track:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .track-number {
+            width: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 20px !important;
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .cd-player, .track-list {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .album-art {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .header-container {
+                font-size: 28px;
+                min-height: 100px;
+            }
+        }
+
+    /*for the activities*/
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.png');
+        background-size: cover;
+        color: white;
+        border: 1px solid #ddd;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        left: 100%;/*it displays on the right*/
+        margin-left: 30px;
+        width: 490px;
+        z-index: 1000;/*asa siya magpa-kita*/
+        top: 0;/*displays on the same height as the image*/
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .desc {
+        padding: 15px;
+        text-align: justify;
+        font-size: 20px;
+    }    
+
+    .social-links img{
+        display: inline-block;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    /*Suggestion form*/
+    form {
+        border-radius: 5px;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg_vamp.jpg');
+        padding: 20px;
+    }
+    label {
+        display: block;
+        color: white;
+        font-size: 20px;
+    }
+    input[type=text], select {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #620000;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type=submit] {
+        width: 100%;
+        background-color: #de0000;
+        color: white;
+        padding: 14px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type=submit]:hover {
+        background-color: #700000;
+    }
+
+    /*footer design*/
+    .footer {
+        text-align: center !important;
+        font-size: 16px;
+        padding: 20px;
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        border-radius: 8px;
+        margin-top: 30px;
+        width: 97%;
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    .footer p { /*to override global styles*/
+        text-align: center !important;
+    }
+</style>
+
+<body>
+<!-- Header with title and navigation -->
+<div class="container">
+        <div class="header-container">
+            <h1 style="-webkit-text-stroke: 0.9px #333; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">-'🍷⁠*⁠࣪ ִ. Enhypen Fan Wiki -'🍷⁠*࣪ ִ.⁠</h1>
+                <!-- Navigation bar -->
+                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <div class="nav-wrapper">
+                    <ul class="nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#members">Members</a></li>
+                        <li><a href="#albums">Albums</a></li>
+                        <li><a href="#activities">Activities</a></li>
+                        <li><a href="#socials">Socials</a></li>
+                    </ul>
+                </div>
+    </div>
+    <script> /*script for mobile menu toggle*/
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navWrapper = document.querySelector('.nav-wrapper');
+        menuToggle.addEventListener('click', function() {
+            navWrapper.classList.toggle('active');
+        });
+    });
+    </script>
+</div>
+
+<div> <!-- The vamp kidz hehe -->
+    <ul class="rising-images" >
+        <li>
+            <img src="vamp_won.png" alt="Jungwon">
+            <span class="member-name">Jungwon</span>
+        </li>
+        <li>
+            <img src="vamp_hee.png" alt="Heeseung">
+            <span class="member-name">Heeseung</span>
+        </li>
+        <li>
+            <img src="vamp_jay.png" alt="Jay">
+            <span class="member-name">Jay</span>
+        </li>
+        <li>
+            <img src="vamp_jake.png" alt="Jake">
+            <span class="member-name">Jake</span>
+        </li>
+        <li>
+            <img src="vamp_hoon.png" alt="Sunghoon">
+            <span class="member-name">Sunghoon</span>
+        </li>
+        <li>
+            <img src="vamp_sun.png" alt="Sunoo">
+            <span class="member-name">Sunoo</span>
+        </li>
+        <li>
+            <img src="vamp_niki.png" alt="Ni-ki">
+            <span class="member-name">Ni-ki</span>
+        </li>
+    </ul>
+</div>
+
+<!-- About Section -->
+<div class="container" id="about">
+    <h2>About Enhypen 𓆩^._.^𓆪</h2>
+    <img src="enhypen.jpg" alt="Enhypen" style="width:900px;">
+    <img src="enhypen1.jpg" alt="Enhypen" style="width:900px;">
+    <p><br><i><b>Enhypen (Korean: 엔하이픈; stylized as ENHYPEN)</i></b> is a South Korean boy band formed through the survival show "I-LAND." The group debuted on November 30, 2020, under Belift Lab, a joint venture between Big Hit Entertainment and CJ ENM. Enhypen consists of seven members: <i><b>Jungwon, Heeseung, Jay, Jake, Sunghoon, Sunoo, and Ni-ki.</i></b> The group quickly gained popularity for their unique concept, powerful performances, and strong vocal abilities.<br><br>
+    The name <i><b>Enhypen</i></b> was introduced during the live broadcast of the final episode of I-Land. Etymologically, the group derives their name from the hyphen symbol (-), representing "Connection, Discovery, & Growth". Similar to how a hyphen connects different words to create new meanings, Enhypen aims <i><b>"to come together to connect, discover and grow together to form a new act".</i></b><br><br><i><b>Engene</b></i> is the official fandom name for Enhypen. The name was announced on October 9th, 2020. The name holds two significant meanings: "Engene" as a play on words, <b><i>representing fans as the engines that help the group grow and move forward, and also as the fans being the gene that shares the same DNA as ENHYPEN, connecting them to discover and grow together.</i></b><br><br>ENHYPEN's concept centers on a <b><i>dark, romantic narrative of vampires and werewolves, particularly in their "DARK MOON" universe, which explores themes of love, desire, and connection between these mythical beings and their human reincarnations.</i></b> Their music and lore, originating from the survival show I-LAND, often feature storylines of immortal beings navigating new worlds, grappling with their past, and forming bonds with humans. This unique concept has captivated fans and set them apart in the K-pop industry.<br><br>
+</p>
+
+    <table><!--logo-->
+    <tr>
+        <th>Enhypen Logo</th>
+        <th>Engene Logo</th>
+    </tr>
+    <tr>
+        <td><img src="logo_en.png" alt="Enhypen Logo"></td>
+        <td><img src="logo_eng.png" alt="Engene Logo" style="width: 270px;"></td> <!--additional size para pantay-->
+    </tr>
+    </table>
+</div>
+
+<!-- Members Section -->
+<div class="container" id="members">
+    <h2>Members ִֶָ⋆༺𖤍༻⋆</h2>
+    <div class="slides-container">
+        <!-- Slide 1: Jungwon-->
+        <div class="slide active" id="slide1">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="jungwon.jpg" alt="Jungwon">
+                    </div>
+                    <div class="id-info">
+                        <h2>Yang Jung-won (양정원)</h2>
+                        <p><strong>Born:</strong> Febuary 9, 2004</p>
+                        <p><strong>Height:</strong> 174 cm</p>
+                        <p><strong>Nationality:</strong> South Korean</p>
+                        <p>The capable and charismatic leader of the group, known for his cat-like eyes. He is a precise and powerful performer with a warm heart for his members.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="won.jpg" alt="jungwon_1">
+                    <img src="won1.jpg" alt="jungwon_2">
+                    <img src="won2.jpg" alt="jungwon_3">
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2: Heeseung -->
+        <div class="slide" id="slide2">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="heesung.jpg" alt="Heeseung">
+                    </div>
+                    <div class="id-info">
+                        <h2>Lee Heeseung (이희승)</h2>
+                        <p><strong>Born:</strong> October 15, 2001</p>
+                        <p><strong>Height:</strong> 182 cm</p>
+                        <p><strong>Nationality:</strong> South Korean</p>
+                        <p>The talented ace and main vocalist, often considered the group's foundation. His stable live singing and all-rounder skills in dance and rap make him a standout.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="hee.jpg" alt="heeseung_1">
+                    <img src="hee1.jpg" alt="heeseung_2">
+                    <img src="hee2.jpg" alt="heeseung_3">
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3: Jay -->
+        <div class="slide" id="slide3">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="jay.jpg" alt="Jay">
+                    </div>
+                    <div class="id-info">
+                        <h2>Park Jong-seong (박종성)</h2>
+                        <p><strong>Born:</strong> April 20, 2002</p>
+                        <p><strong>Height:</strong> 180 cm</p>
+                        <p><strong>Nationality:</strong> American, South Korean</p>
+                        <p>A passionate and stylish performer with a strong stage presence. Off-stage, he's a dedicated "cool guy" who loves cooking and takes care of the others.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="j.jpg" alt="jay_1">
+                    <img src="j1.jpg" alt="jay_2">
+                    <img src="j2.jpg" alt="jay_3">
+                </div>
+            </div>
+        </div>
+        <!-- Slide 4: Jake -->
+        <div class="slide" id="slide4">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="jake.jpg" alt="Jake">
+                    </div>
+                    <div class="id-info">
+                        <h2>Sim Jaeyun (심재윤)</h2>
+                        <p><strong>Born:</strong> November 15, 2002</p>
+                        <p><strong>Height:</strong> 176 cm</p>
+                        <p><strong>Nationality:</strong> Australian, South Korean</p>
+                        <p>The group's sunny "golden retriever" known for his bright and friendly energy. Hailing from Australia, he is a diligent all-rounder who charms with his dedication and vocals.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="ke.jpg" alt="jake_1">
+                    <img src="ke1.jpg" alt="jake_2">
+                    <img src="ke2.jpg" alt="jake_3">
+                </div>
+            </div>
+        </div>
+        <!-- Slide 5: Sunghoon -->
+        <div class="slide" id="slide5">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="sunghoon.jpg" alt="Sunghoon">
+                    </div>
+                    <div class="id-info">
+                       <h2>Park Sunghoon (박성훈)</h2>
+                        <p><strong>Born:</strong> December 8, 2003</p>
+                        <p><strong>Height:</strong> 180 cm</p>
+                        <p><strong>Nationality:</strong> South Korean</p>
+                        <p>A former national figure skater who brings elegance and grace to every performance. As a visual of the group, he is known for his cool demeanor that contrasts with his hidden playfulness.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="hoon.jpg" alt="sunghoon_1">
+                    <img src="hoon1.jpg" alt="sunghoon_2">
+                    <img src="hoon2.jpg" alt="sunghoon_3">
+                </div>
+            </div>
+        </div>
+        <!-- Slide 6: Sunoo -->
+        <div class="slide" id="slide6">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="sunoo.jpg" alt="Sunoo">
+                    </div>
+                    <div class="id-info">
+                        <h2>Kim Sunwoo (김선우)</h2>
+                        <p><strong>Born:</strong> June 24, 2003</p>
+                        <p><strong>Height:</strong> 177 cm</p>
+                        <p><strong>Nationality:</strong> South Korean</p>
+                        <p>The official mood-maker with a bright and expressive personality that draws people in. He is known for his unique, sweet vocal tone and his powerful, engaging facial expressions on stage.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="sun.jpg" alt="sunoo_1">
+                    <img src="sun1.jpg" alt="sunoo_2">
+                    <img src="sun2.jpg" alt="sunoo_3">
+                </div>
+            </div>
+        </div>
+        <!-- Slide 7: Ni-ki -->
+        <div class="slide" id="slide7">
+            <div class="slide-content container">
+                <div class="id-card">
+                    <div class="id-image">
+                        <img src="niki.jpg" alt="Ni-ki">
+                    </div>
+                    <div class="id-info">
+                        <h2>Nishimura Riki (西村 力)</h2>
+                        <p><strong>Born:</strong> December 9, 2005</p>
+                        <p><strong>Height:</strong> 186 cm</p>
+                        <p><strong>Nationality:</strong> Japanese</p>
+                        <p>The group's maknae (youngest) and a phenomenal main dancer from Japan. His incredible athleticism and sharp, intuitive choreography often leave audiences in awe.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="ki.jpg" alt="niki_1">
+                    <img src="ki1.jpg" alt="niki_2">
+                    <img src="ki2.jpg" alt="niki_3">
+                </div>
+            </div>
+        </div>
+
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+    <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
+
+    <!-- Slide Indicators -->
+    <div class="slide-indicators" id="indicators">
+        <!-- Indicators will be generated by JavaScript -->
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicatorsContainer = document.getElementById('indicators');
+
+        // Create indicators
+        slides.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+            indicator.onclick = () => goToSlide(index);
+            indicatorsContainer.appendChild(indicator);
+        });
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 0 && newSlide < slides.length) {
+                goToSlide(newSlide);
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            // Hide current slide
+            slides[currentSlide].classList.remove('active');
+            document.querySelectorAll('.indicator')[currentSlide].classList.remove('active');
+            
+            // Show new slide
+            currentSlide = slideIndex;
+            slides[currentSlide].classList.add('active');
+            document.querySelectorAll('.indicator')[currentSlide].classList.add('active');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX) changeSlide(1); // Swipe left - next
+            if (touchEndX > touchStartX) changeSlide(-1); // Swipe right - previous
+        }
+    </script>
+    </div>
+</div>
+
+<!-- Albums Section -->
+<!-- Main content container -->
+<div class="container" id="albums">
+    <h2>Albums ‧₊˚♪ 𝄞₊˚⊹</h2>
+    <p>Explore the Korean and Japanese Albums of Enhypen from 2020 to 2025.</p>
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="day_one.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Border: Day One</h2>
+                <p class="album-year">2020 • 6 tracks • 15 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">You call me beyond the line, I'm calling to you.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3yXUG6wZczeYgCE3L0z2pD?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/69WpV0U7OMNFGyq8I63dcC?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/4eOcd47wPU3ixxYw0spREl?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3LcFQsZw01tRvjCNLgSmTv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3TgPwLFXV6GEIsDZANHktY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3jkDtDzZKCmWtDccH7UUsq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="carnival.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Border: Carnival</h2>
+                <p class="album-year">2021 • 6 tracks • 15 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Go as far as you can reach, trapped in the carnival.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6gGpF8V8miC4O0GZUqSZ9a?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1wcr8DjnN59Awev8nnKpQ4?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/0UzymivvUH5s8z4PeWZJaK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3dG1jxbfBIZvzyFwAcsmS0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6S0By3u06ttb3kU2XEtWnw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6HBrUqKU3IE4aHKj0foQ2b?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="hakanai.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Border : 儚い Hakanai</h2>
+                <p class="album-year">2021 • 3 tracks • 9 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Even if the scenery hidden in the clouds isn't what I expected, I'll believe in the faint remaining sign in my heart.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2T7E6Gl6XxB8UnuqrufqYT?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5mfevw9okQ6kAyb7UWlLiE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3QA3KfGs1UvSEZkWcio81R?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+        <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="dilemma.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Dimension: Dilemma</h2>
+                <p class="album-year">2021 • 8 tracks • 17 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Scorching sun show me the way, my compass please don't leave me now.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/20PaIK7cbEwnYFQrLU8USm?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1zoyteFQmeUUqyOl2Xznpy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6oSCR9n71tmwWL3GFb65Ec?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3QdjLOemIcMZovVOnvJP7P?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6IqKFke4ZhKbGYULllEezY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/08XshFxOo9rcQagObgcoK6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">7</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/59qDYPZPkMPl8qSYRig1xn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">8</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5hmNvW5VqPJ96N6om3tO4g?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="answer.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Dimension: Answer</h2>
+                <p class="album-year">2022 • 3 tracks • 7 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Between these lies, we dive into this real life.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/7ecbsiAQ6PNdiAq0hplVZo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5elW2CKSoqjYoJ32AGDxf1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/4mFOAfQQZ1U3NVBoamJfGR?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="senkou.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Dimension : 閃光 Senkou</h2>
+                <p class="album-year">2022 • 3 tracks • 10 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Hey, I'm by your side, always.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/6pu3d534uImXPTd2ef7Yr2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2PE9H3nIrrQvHuWCbKglpe?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3xGTUo0WtGSwCSxLIhCn0r?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="manifesto.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Manifesto: Day 1</h2>
+                <p class="album-year">2022 • 6 tracks • 17 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">That moment in our future perfect, shout out together!</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/0xDVPc5W2jYqO6p9NisCI4?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6PRy17C5LiiN7VCLS6IA98?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3OC2C8IpFhbUJTeMe55QYn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3bI34Ts8OMPfIpoPqzyZgM?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5Z2DNRAhs6r4VdINVkRhYY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2RmGQmFyJetffds9FSRm3c?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="sadame.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">定め Sadame</h2>
+                <p class="album-year">2022 • 9 tracks • 14 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Step together, dance, towards a tomorrow without hesitation.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/3lwif0ky1b6llUB5p4uulL?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2mx1JVdiFP2PYEPDr5v5OO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1rFczNvTD6flYm3IUdvLth?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/0CPVaydX9lEvyNsL8pTNfQ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/4BjPm0ZU2vq59sUoQkcAGn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/0MiR9O8fJIus2V5LPMwDob?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">7</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3vGFiJBZGJ9gdUC3lv9NtZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">8</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3Vq4EAlxbgXSw561OL3EQR?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">9</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5rJuBb2XuK4fimXi9p5YOH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="darkblood.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Dark Blood</h2>
+                <p class="album-year">2023 • 6 tracks • 17 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">If you are goin' to save me, just come kiss me and bite me.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/0iLyNDLTsBkqB8SLAzNGxF?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/7mpdNiaQvygj2rHoxkzMfa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/58ItBuVuKc03DvqSeZFnH1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/7nBjhYbLttb9LHZHqNuld5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2nfluhFVrO5OBXPzRWlwlz?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1RGaIn89VUtXvJCXz1tDNb?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="you.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">結 YOU</h2>
+                <p class="album-year">2023 • 3 tracks • 9 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Words cannot express this feeling.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/0INxaaPlo9DnT0OYEzHdsk?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/34XCh5DGAAGwwIGJoQpzU5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1kfpDfQdK7oDxfw4XgSJT1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="orangeblood.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Orange Blood</h2>
+                <p class="album-year">2023 • 5 tracks • 14 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">I'll gladly sacrifice myself for you, take my life now.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/3JdYRIhtpQd56Dj3rhMRoC?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+            <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2YmfV4lAjrAQvuggKCUX6m?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6tuTpe37ljVcrJeZAAKBE1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5zyAmGZ6IfotltMUqzMhdg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5Cb3JSisvjlZhjSfYD6d7C?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="memorabilia.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Memorabilia</h2>
+                <p class="album-year">2024 • 6 tracks • 19 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">I've been looking for you since you left, night and day, what a pity life.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/4KVcXYH9wgj89i57969bY6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+            <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6PUTM7E4k9mSgy7KOClSZq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6i1PYoUEMHqxAsAUKHkqpe?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6JlQqA7FDfqLbnpJBwypPe?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/7Fq4xDlMtpqca0IyTYXldY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1kgg5vR9QCW72RTNQTaSRH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="romance.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Romance: Untold</h2>
+                <p class="album-year">2024 • 8 tracks • 21 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Just the two of us getting deeply moonstruck.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/3gYWGRS64XrGSrjD3vvtga?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3RkSwrsIadAvqVtMp5yhaB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2DJRPYt6QLeYlU6xzdSW5p?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3UIEaJs7OfXpcFSoQhqNC0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/3ivdlmTbUSv5JN9W8Tk9V1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1tLq6MZA5Lqpms4AZ4CcrG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">7</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2DPq5UkMuc7eN2NFHjGPNn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">8</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/1dAKL41zeVDP8PiLJDsRQv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="daydream.png" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Romance: Untold - Daydream</h2>
+                <p class="album-year">2024 • 2 tracks • 5 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">Pour your heart and soul to the one you love.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/4lwTKer57RtonkWsEi2pVn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/44hqFxUWsADWewEJELnncj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="unleash.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">Desire: Unleash</h2>
+                <p class="album-year">2025 • 6 tracks • 14 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">The moon, so massive you could touch it, bathes my desire in crimson red.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/4uj7LoS14txqhRylMR4Fj1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/38pEX03GFZ0PfFDaOrpKOM?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/0IXWLMBZeK33mOb044Sxu6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">4</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2tqj80s8UMqFrhMAdxLuh6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">5</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/48jRAABr5TxjWHvoNWClGG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">6</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/6gezrIScVLEnV1szuZxhvA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left side - CD Player -->
+        <div class="cd-player">
+            <div class="album-art">
+                <img src="yoi.jpg" alt="Album Cover">
+            </div>
+            
+            <div class="album-info">
+                <h2 class="album-title">宵 YOI</h2>
+                <p class="album-year">2025 • 3 tracks • 9 min</p>
+                <q style="font-size: 14px; opacity: 0.8; color: #ffffff;">I keep dreaming of the nights where the world I spent with you is already forever.</q>
+            </div>
+        </div>
+
+        <!-- Right side - Track List -->
+        <div class="track-list">
+            <h2 class="section-title">Track List</h2>
+            
+            <div class="track active">
+                <div class="track-number">1</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height: 80px;" src="https://open.spotify.com/embed/track/2lRWpvHxPlcSHylsnSp0NY?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">2</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/2HcdmAwTWL2zekEICHENEq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="track">
+                <div class="track-number">3</div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px; height:80px;" src="https://open.spotify.com/embed/track/5Kao5DDY7AxlGDnhVcmHKk?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Activities-->
+<div class="container" id="activities">
+        <h2>Activities ( • ω •́)✧</h2>
+        <p>Explore some of Enhypen's content throughout the years.</p>
+
+        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
+        <iframe width="860" height="515" src="https://www.youtube.com/embed/fiHpL5ybGC0?si=h2tkTN4JejJ_f7fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div class="dropdown-content">
+            <p style="font-size: 20px; text-align: justify;">
+                <b>Enhypen&Hi! Season 1 and Season 2</b><br><br>
+                Enhypen&Hi! is a reality show that showcases the daily lives and activities of the members of Enhypen. The show is divided into two seasons, with Season 1 airing in 2020 and Season 2 airing in 2021. The show features various segments, including games, challenges, and behind-the-scenes footage of the group's music videos and performances.
+            </p>
+        </div>
+        </div>
+        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
+        <iframe width="860" height="515" src="https://www.youtube.com/embed/pnIaFsUv5G8?si=Du_opLS4khULvYu_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div class="dropdown-content">
+            <p style="font-size: 20px; text-align: justify;">
+                <b>En-O'Clock</b><br><br>
+                En-O'Clock is a web variety show that features the members of Enhypen engaging in various activities, games, and challenges. The show provides fans with a closer look at the personalities and dynamics of the group members through fun and entertaining segments.
+            </p>
+        </div>
+        </div>
+        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
+        <iframe width="860" height="515" src="https://www.youtube.com/embed/9i8vhgF2H7w?si=aeX42PklbAV3R6z7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div class="dropdown-content">
+            <p style="font-size: 20px; text-align: justify;">
+                <b>So so fun!</b><br><br>
+                So so fun! is a variety show that features the members of Enhypen participating in various fun and entertaining activities. The show includes segments such as games, challenges, and behind-the-scenes footage of the group's music videos and performances.
+            </p>
+        </div>
+        </div>
+        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
+        <iframe width="860" height="515" src="https://www.youtube.com/embed/YqErGcN6Bq8?si=hjH4rsSjPqSBl6nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div class="dropdown-content">
+            <p style="font-size: 20px; text-align: justify;">
+                <b>En-Log</b><br><br>
+                En-Log is a vlog series that provides fans with a behind-the-scenes look at the daily lives and activities of the members of Enhypen. The series features footage of the group members during their travels, rehearsals, and other events, giving fans a glimpse into their personalities and interactions with each other.
+            </p>
+        </div>
+        </div>
+        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
+        <iframe width="860" height="515" src="https://www.youtube.com/embed/_2q6hAk-NHo?si=TTmF3-_Jzr6X63ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div class="dropdown-content">
+            <p style="font-size: 20px; text-align: justify;">
+                <b>[-note]</b><br><br>
+                [-note] is a web series that features the members of Enhypen sharing their thoughts and experiences on various topics. The show includes segments such as personal stories, Q&A sessions, and discussions about their music and performances.
+            </p>
+        </div>
+        </div>
+    </div>
+
+<!--socials-->
+<div class="container" id="socials">
+    <h2>Social Media ˙✧˖°📷 ༘ ⋆｡˚</h2>
+    <p>Stay connected with Enhypen through their official social media channels. Click a picture to redirect you to the respective platform.</p>
+    <div class="social-links">
+        <a href="https://www.tiktok.com/@enhypen?lang=en" target="_blank">
+            <img src="tiktok.png" alt="tiktok" width="400px" height="250px">
+        </a>
+        <a href="https://x.com/ENHYPEN_members" target="_blank">
+            <img src="twitter.png" alt="twitter" width="400px" height="250px">
+        </a>
+        <a href="https://weverse.io/enhypen/feed?hl=ko" target="_blank">
+            <img src="weverse.png" alt="weverse" width="400px" height="250px">
+        </a>
+        <a href="https://www.instagram.com/enhypen/" target="_blank">
+            <img src="instagram.png" alt="instagram" width="400px" height="250px">
+        </a>
+        <a href="https://www.youtube.com/@ENHYPENOFFICIAL" target="_blank">
+            <img src="youtube.png" alt="youtube" width="400px" height="250px">
+        </a>
+        <a href="https://weibo.com/p/100808fb121a7bc55d665ddb384908751d7581/topic_video?from=page_100808&mod=TAB#place" target="_blank">
+            <img src="weibo.png" alt="weibo" width="400px" height="250px">
+        </a>
+    </div>
+</div>
+
+<!--suggestion section form-->
+    <div class="container">
+    <h2 style="font-size: 35px;">What more do you want to see from us? ⤦⋆˚࿔ </h2>
+        <form action="/action_page.php">
+             <label for="lname">Content Request</label>
+                <input type="text" id="lname" name="commission" placeholder="Your content request..">
+
+                <input type="submit" value="Submit">
+        </form>
+    </div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>© 2025 Enhypen Fan Wiki | <a href="#privacy" style="color: #ff4747;">Privacy Policy</a> | <a href="#terms" style="color: #ff4747;">Terms of Service</a></p>
+    <p>Follow us on: 
+        <a href="https://www.tiktok.com/@starlight_arthub?lang=en" style="color: #ff4747;">Twitter</a> | 
+        <a href="https://www.tiktok.com/@starlight_arthub?lang=en" style="color: #ff4747;">Tiktok</a> | 
+        <a href="https://www.instagram.com/the_zarlight/" style="color: #ff4747;">Instagram</a>
+    </p>
+</div>
+</body>
+</html>
