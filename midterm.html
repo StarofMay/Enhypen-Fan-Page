@@ -8,23 +8,30 @@
 </head>
 
 <style>
+    * { /*helps with consistent sizing*/
+        box-sizing: border-box; /*apil padding and border sa calcu*/
+    }
     body {
         font-family: Arial, sans-serif;
         line-height: 1;
         background-image: url('bg_vamp.jpg');
-        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         }
 
     .container {
-        width: 97%;
+        width: 100%;
+        max-width: 1200px;/*to prevent excessive stretching*/
         color: rgb(255, 255, 255) !important; /*ensures nga mao ni color sa text throughout*/
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         position: relative;
-        min-height: 100px;
+        min-height: 10vw;
         font-family:monospace;
-        font-size: 40px;
+        font-size: clamp(16px, 3vw, 24px); /*min, ideal, max*/
+        margin: 0 auto;
         }
 
     /* Header styles */
@@ -42,6 +49,8 @@
         font-size: 35px;
         border-radius: 8px;
         border-style: none; /*this looks best*/
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 20px;
         }
 
@@ -114,7 +123,7 @@
         justify-content: center;
         align-items: flex-end;
         height: 120px;
-        gap: 10px;
+        gap: clamp(10px, 2vw, 20px);
         margin: 30px 0;
         padding: 0;
         list-style: none;
@@ -126,13 +135,11 @@
         align-items: center;
     }
     .rising-images img {
-        width: 100px;
-        height: 100px;
-        border-radius: 8px;
+        width: 65%;
+        height: 65%;
         object-fit: cover;
         border: none !important;
         outline: none !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         transition: transform 0.6s ease-in-out;
     }
     .rising-images .member-name {
@@ -149,7 +156,6 @@
         white-space: nowrap;
         pointer-events: none;
         z-index: 1000;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
     }
     /* Tooltip arrow for the mem names*/
     .rising-images .member-name::before {
@@ -204,11 +210,14 @@
         }
 
     p { /*for all paragraphs*/
-        font-size: 20px;
+        font-size: clamp(14px, 1.5vw, 18px); /*min, ideal, max*/
         text-align: justify; 
+        line-height: 1.6;
     }
     img { /*for all pics*/
         display: block;
+        max-width: 100%;
+        height: auto;
         margin: auto;
         outline: #ffffff; 
         outline-style: solid; 
@@ -241,8 +250,22 @@
     .slides-container {
         position: relative;
         width: 100%;
-        height: 900px;
+        height: auto;
+        min-height: 800px;
         overflow: hidden;
+        padding-bottom: 60px;
+    }
+    @media (max-width: 768px) {
+    .slides-container {
+        min-height: 900px; /* Slightly more on mobile */
+        padding-bottom: 50px;
+    }
+    }
+    @media (max-width: 480px) {
+    .slides-container {
+        min-height: 950px; /* Even more for small screens */
+        padding-bottom: 40px;
+    }
     }
     .slide {
         position: absolute;
@@ -257,8 +280,8 @@
     .slide-content {
         border-radius: 15px;
         padding: 30px;
-        width: 90%;
-        max-width: 1200px;
+        width: 95%;
+        max-width: 1100px;
         color: white;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
@@ -266,8 +289,9 @@
     /* ID Card Layout para sa members info*/
     .id-card {
         display: flex;
-        gap: 30px;
-        margin-bottom: 30px;
+        flex-direction: row;
+        gap: 15px;
+        margin-bottom: 15px;
         align-items: center;
     }
     .id-image {
@@ -278,7 +302,7 @@
     }
     .id-image img {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
     }
     .id-info {
@@ -287,26 +311,46 @@
     .id-info h2 {
         color: #ff4747;
         margin-bottom: 15px;
-        font-size: 28px;
+        font-size: 3vw;
         border-bottom: 2px solid #830000;
         padding-bottom: 10px;
     }
     .id-info p {
-        font-size: 18px;
+        font-size: clamp(14px, 1.5vw, 18px); /*min, ideal, max*/
         line-height: 1.6;
         margin-bottom: 15px;
+    }
+    /*for mobile responsiveness*/
+    @media (max-width: 767px) {
+    .id-card {
+        flex-direction: column; /* Stack on mobile */
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .id-image {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 280px;
+    }
     }
 
     /* Gallery Section sa members*/
     .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
         margin-top: 20px;
+    }
+    @media (min-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
     }
     .gallery img {
         width: 100%;
-        height: 350px;
+        height: 100%;
         object-fit: cover;
         border-radius: 8px;
         transition: transform 0.3s ease;
@@ -314,6 +358,7 @@
     .gallery img:hover {
         transform: scale(1.05);
     }
+    
 
     /* Navigation Buttons */
     .nav-btn {
@@ -323,8 +368,8 @@
         background: rgba(131, 0, 0, 0.8);
         color: white;
         border: none;
-        padding: 20px 15px;
-        font-size: 24px;
+        padding: clamp(10px, 2vw, 15px);
+        font-size: clamp(18px, 2.5vw, 24px);
         cursor: pointer;
         border-radius: 5px;
         transition: all 0.3s ease;
@@ -335,21 +380,30 @@
         transform: translateY(-50%) scale(1.1);
     }
     .prev-btn {
-        left: 20px;
+        left: 5px;
     }
     .next-btn {
-        right: 20px;
+        right: 5px;
     }
 
     /*dot dot at the bottom*/
     .slide-indicators {
         position: absolute;
-        bottom: 100px; /*moves it closer to the slide*/
+        bottom: 10px; /*moves it closer to the slide*/
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        gap: 10px;
+        gap: clamp(6px, 1.5vw, 12px);
         z-index: 1000;
+        flex-wrap: nowrap;
+        justify-content: center;
+        max-width: 90%;
+        padding: 0 10px;
+    }
+    @media (max-width: 767px) {
+    .slide-indicators {
+        bottom: 30px;
+    }
     }
     .indicator {
         width: 12px;
@@ -358,6 +412,7 @@
         background: rgba(255, 255, 255, 0.5);
         cursor: pointer;
         transition: all 0.3s ease;
+        flex-shrink: 0;
     }
     .indicator.active {
         background: #ff4747;
@@ -373,7 +428,6 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            margin: 0 auto;
             margin-bottom: 20px;
         }
 
@@ -485,33 +539,33 @@
     /*for the activities*/
     .dropdown {
         position: relative;
-        display: inline-block;
+        width:100%;
+        max-width: 860px;
+        margin: 0 auto;
+    }
+    .dropdown iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
     }
     .dropdown-content {
         display: none;
         position: absolute;
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.png');
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg_vamp.jpg');
         background-size: cover;
         color: white;
         border: 1px solid #ddd;
         padding: 15px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         border-radius: 8px;
-        left: 100%;/*it displays on the right*/
         margin-left: 30px;
-        width: 490px;
-        z-index: 1000;/*asa siya magpa-kita*/
+        width: 90%;
         top: 0;/*displays on the same height as the image*/
     }
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    .desc {
-        padding: 15px;
-        text-align: justify;
-        font-size: 20px;
-    }    
-
+   
     .social-links img{
         display: inline-block;
         justify-content: center;
@@ -528,7 +582,6 @@
     label {
         display: block;
         color: white;
-        font-size: 20px;
     }
     input[type=text], select {
         width: 100%;
@@ -556,9 +609,9 @@
     /*footer design*/
     .footer {
         text-align: center !important;
-        font-size: 16px;
+        font-size: clamp(10px, 1vw, 14px); /*min, ideal, max*/
         padding: 20px;
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.png');
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg_vamp.jpg');
         background-size: cover;
         background-position: center;
         color: white;
@@ -575,21 +628,20 @@
 
 <body>
 <!-- Header with title and navigation -->
-<div class="container">
-        <div class="header-container">
-            <h1 style="-webkit-text-stroke: 0.9px #333; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">-'🍷⁠*⁠࣪ ִ. Enhypen Fan Wiki -'🍷⁠*࣪ ִ.⁠</h1>
-                <!-- Navigation bar -->
-                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-                <div class="nav-wrapper">
-                    <ul class="nav">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#members">Members</a></li>
-                        <li><a href="#albums">Albums</a></li>
-                        <li><a href="#activities">Activities</a></li>
-                        <li><a href="#socials">Socials</a></li>
-                    </ul>
-                </div>
-    </div>
+<div class="header-container">
+    <h1 style="-webkit-text-stroke: 0.9px #333; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Enhypen Fan Wiki⁠</h1>
+        <!-- Navigation bar -->
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <div class="nav-wrapper">
+        <ul class="nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#albums">Albums</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#socials">Socials</a></li>
+        </ul>
+        </div>
+</div>
     <script> /*script for mobile menu toggle*/
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.querySelector('.menu-toggle');
@@ -1559,51 +1611,51 @@
         <h2>Activities ( • ω •́)✧</h2>
         <p>Explore some of Enhypen's content throughout the years.</p>
 
-        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
-        <iframe width="860" height="515" src="https://www.youtube.com/embed/fiHpL5ybGC0?si=h2tkTN4JejJ_f7fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="dropdown"><!--youtube embedded-->
+        <iframe src="https://www.youtube.com/embed/fiHpL5ybGC0?si=h2tkTN4JejJ_f7fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         
         <div class="dropdown-content">
-            <p style="font-size: 20px; text-align: justify;">
+            <p style="font-size: 15px; text-align: justify;">
                 <b>Enhypen&Hi! Season 1 and Season 2</b><br><br>
                 Enhypen&Hi! is a reality show that showcases the daily lives and activities of the members of Enhypen. The show is divided into two seasons, with Season 1 airing in 2020 and Season 2 airing in 2021. The show features various segments, including games, challenges, and behind-the-scenes footage of the group's music videos and performances.
             </p>
         </div>
         </div>
-        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
-        <iframe width="860" height="515" src="https://www.youtube.com/embed/pnIaFsUv5G8?si=Du_opLS4khULvYu_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="dropdown"><!--youtube embedded-->
+        <iframe src="https://www.youtube.com/embed/pnIaFsUv5G8?si=Du_opLS4khULvYu_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         <div class="dropdown-content">
-            <p style="font-size: 20px; text-align: justify;">
+            <p style="font-size: 15px; text-align: justify;">
                 <b>En-O'Clock</b><br><br>
                 En-O'Clock is a web variety show that features the members of Enhypen engaging in various activities, games, and challenges. The show provides fans with a closer look at the personalities and dynamics of the group members through fun and entertaining segments.
             </p>
         </div>
         </div>
-        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
-        <iframe width="860" height="515" src="https://www.youtube.com/embed/9i8vhgF2H7w?si=aeX42PklbAV3R6z7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="dropdown"><!--youtube embedded-->
+        <iframe src="https://www.youtube.com/embed/9i8vhgF2H7w?si=aeX42PklbAV3R6z7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         
         <div class="dropdown-content">
-            <p style="font-size: 20px; text-align: justify;">
+            <p style="font-size: 15px; text-align: justify;">
                 <b>So so fun!</b><br><br>
                 So so fun! is a variety show that features the members of Enhypen participating in various fun and entertaining activities. The show includes segments such as games, challenges, and behind-the-scenes footage of the group's music videos and performances.
             </p>
         </div>
         </div>
-        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
-        <iframe width="860" height="515" src="https://www.youtube.com/embed/YqErGcN6Bq8?si=hjH4rsSjPqSBl6nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="dropdown"><!--youtube embedded-->
+        <iframe src="https://www.youtube.com/embed/YqErGcN6Bq8?si=hjH4rsSjPqSBl6nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         <div class="dropdown-content">
-            <p style="font-size: 20px; text-align: justify;">
+            <p style="font-size: 15px; text-align: justify;">
                 <b>En-Log</b><br><br>
                 En-Log is a vlog series that provides fans with a behind-the-scenes look at the daily lives and activities of the members of Enhypen. The series features footage of the group members during their travels, rehearsals, and other events, giving fans a glimpse into their personalities and interactions with each other.
             </p>
         </div>
         </div>
-        <div class="dropdown" style="width: 860px;"><!--youtube embedded-->
-        <iframe width="860" height="515" src="https://www.youtube.com/embed/_2q6hAk-NHo?si=TTmF3-_Jzr6X63ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        
+        <div class="dropdown"><!--youtube embedded-->
+        <iframe src="https://www.youtube.com/embed/_2q6hAk-NHo?si=TTmF3-_Jzr6X63ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
         <div class="dropdown-content">
-            <p style="font-size: 20px; text-align: justify;">
+            <p style="font-size: 15px; text-align: justify;">
                 <b>[-note]</b><br><br>
                 [-note] is a web series that features the members of Enhypen sharing their thoughts and experiences on various topics. The show includes segments such as personal stories, Q&A sessions, and discussions about their music and performances.
             </p>
@@ -1639,7 +1691,7 @@
 
 <!--suggestion section form-->
     <div class="container">
-    <h2 style="font-size: 35px;">What more do you want to see from us? ⤦⋆˚࿔ </h2>
+    <h2>What more do you want to see from us? ⤦⋆˚࿔ </h2>
         <form action="/action_page.php">
              <label for="lname">Content Request</label>
                 <input type="text" id="lname" name="commission" placeholder="Your content request..">
